@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "dreamhouse-demo-app",
   "version": "1.0.0",
   "scripts": {
     "client": "cd client && yarn start",
@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "pg": "^7.8.0"
   },
   "devDependencies": {
     "concurrently": "^4.0.1"
