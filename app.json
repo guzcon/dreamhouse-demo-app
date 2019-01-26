@@ -4,7 +4,7 @@
   "keywords": [
     "app-cloud"
   ],
-  "repository": "https://github.com/guzcon/intro-to-heroku",
+  "repository": "https://github.com/guzcon/dreamhouse-demo-app",
   "addons": [
     "heroku-postgresql"
   ]
