@@ -16,9 +16,25 @@ if (process.env.DATABASE_URL !== undefined) {
 }
 
 const client = new pg.Client(connectionString);
-client.connect();
+client.connect((err) => {
+  if (err) {
+    console.error('connection error', err.stack)
+  } else {
+    console.log('connected')
+  }
+});
 
 // API calls
+
+// app.get('/api/hello', (req, res) => {
+//   res.send({ express: 'Hello From Express' });
+// });
+// app.post('/api/world', (req, res) => {
+//   console.log(req.body);
+//   res.send(
+//     `I received your POST request. This is what you sent me: ${req.body.post}`,
+//   );
+// });
 
 const propertyTable = 'property__c';
 const favoriteTable = 'favorite__c';
@@ -46,7 +62,7 @@ client.query('SELECT * FROM salesforce.broker__c', function(error, data) {
 
 app.get('/property', function(req, res) {
   client.query('SELECT * FROM ' + propertyTable, function(error, data) {
-    res.json(data.rows);
+    res.send({ express: data.rows });
   });
 });
 
