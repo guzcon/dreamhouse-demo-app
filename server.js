@@ -15,7 +15,7 @@ if (process.env.DATABASE_URL !== undefined) {
   pg.defaults.ssl = true;
 }
 
-const const = new pg.Client(connectionString);
+const client = new pg.Client(connectionString);
 client.connect();
 
 // API calls
