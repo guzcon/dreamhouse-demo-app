@@ -1,9 +1,31 @@
+/**** global style ****/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+:root {
+  --theme-primary-color: #d63c07;
+  --gray-500: #767676;
+  --gray-200: #e8e8e8;
+  --gray-100: #ededed;
+  --font-weight-bold: 700;
+  --font-size-sm: 0.875rem;
+  --space-xs: 5px;
+  --space-sm: 15px;
+  --space-md: 30px;
+  --space-lg: 60px;
+}
+
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,4 +33,43 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/****** typography *****/
+
+p {
+  margin-top: 0;
+}
+
+.text-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.text-small {
+  font-size: var(--font-size-sm);
+  color: var(--gray-500);
+}
+
+a {
+  color: black;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: var(--theme-primary-color);
+}
+
+.link-unstyled {
+  text-decoration: none;
+}
+
+/**** spacing helper *****/
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-xs {
+  margin-bottom: var(--space-xs);
 }

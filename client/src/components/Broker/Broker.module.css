@@ -1,0 +1,22 @@
+.broker {
+  display: flex;
+  background-color: var(--gray-100);
+  padding: var(--space-sm);
+}
+
+.broker_image_wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.broker_image {
+  width: 80px;
+  max-width: 100%;
+  height: auto;
+}
+
+.broker_content {
+  margin-left: var(--space-sm);
+}

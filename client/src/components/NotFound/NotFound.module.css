@@ -1,0 +1,10 @@
+.error_container {
+  padding: var(--space-lg) var(--space-sm);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .error_container {
+    padding: var(--space-lg);
+  }
+}
