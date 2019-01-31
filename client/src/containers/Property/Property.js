@@ -24,7 +24,7 @@ class Property extends Component {
   }
 
   loadProperty = async () => {
-    const response = await fetch(`/property/${this.props.match.params.id}`);
+    const response = await fetch(`/properties/${this.props.match.params.id}`);
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
     return body;
@@ -65,7 +65,7 @@ class Property extends Component {
             </div>
           </React.Fragment>
         }
-        
+
         {!property && isLoading &&
           <div style={{margin: '100px 0', textAlign: 'center'}}><Spinner/></div>
         }

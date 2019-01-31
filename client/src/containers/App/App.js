@@ -11,7 +11,7 @@ class App extends Component {
   };
 
   loadProperties = async () => {
-    const response = await fetch('/property');
+    const response = await fetch('/properties');
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
     return body;
