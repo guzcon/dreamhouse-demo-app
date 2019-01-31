@@ -5,11 +5,11 @@ import { AutoSizer,
         List,
         CellMeasurer,
         CellMeasurerCache } from 'react-virtualized';
-import PropertyItem from '../PropertyItem/PropertyItem';
+import PropertyListItem from '../PropertyListItem/PropertyListItem';
 import Spinner from '../Spinner/Spinner';
-import styles from './InfiniteList.module.css';
+import styles from './PropertyList.module.css';
 
-const InfiniteList = ({
+const PropertyList = ({
     list,
     hasNextPage,
     isNextPageLoading,
@@ -34,7 +34,7 @@ const InfiniteList = ({
     if (!isRowLoaded({ index })) {
       content = <div style={{padding: '30px', textAlign: 'center'}}><Spinner/></div>;
     } else {
-      content = <PropertyItem item={list[index]} />;
+      content = <PropertyListItem item={list[index]} />;
     }
     return (
       <CellMeasurer
@@ -86,11 +86,11 @@ const InfiniteList = ({
 
 }
 
-InfiniteList.propTypes = {
+PropertyList.propTypes = {
   list: PropTypes.array.isRequired,
   hasNextPage: PropTypes.bool.isRequired,
   isNextPageLoading: PropTypes.bool.isRequired,
   loadNextPage: PropTypes.func.isRequired
 }
 
-export default InfiniteList;
+export default PropertyList;

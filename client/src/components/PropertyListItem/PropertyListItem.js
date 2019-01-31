@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import arrow from '../../assets/arrow.svg';
-import styles from './PropertyItem.module.css';
+import styles from './PropertyListItem.module.css';
 
-const PropertyItem = ({item}) => (
+const PropertyListItem = ({item}) => (
   <Link to={`/property/${item.sfid}`} className={styles.item_link}>
     <div className={styles.item}>
       <img className={styles.thumbnail} src={item.thumbnail__c} alt={item.title__c}></img>
@@ -17,8 +17,8 @@ const PropertyItem = ({item}) => (
   </Link>
 )
 
-PropertyItem.propTypes = {
+PropertyListItem.propTypes = {
   item: PropTypes.object.isRequired
 }
 
-export default PropertyItem;
+export default PropertyListItem;

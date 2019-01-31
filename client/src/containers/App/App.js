@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header/Header';
-import InfiniteList from '../../components/InfiniteList/InfiniteList';
+import PropertyList from '../../components/PropertyList/PropertyList';
 
 class App extends Component {
 
   state = {
     list: [],
     isNextPageLoading: false,
-    apiCounter: 0
+    apiCounter: 0 // use apiCounter to fake big list
   };
 
   loadProperties = async () => {
@@ -40,7 +40,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header title="Properties" />
-        <InfiniteList
+        <PropertyList
           list={list}
           loadProperties={this.loadProperties}
           hasNextPage={apiCounter < 100 ? true : false}

@@ -1,0 +1,11 @@
+.info_row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--gray-200);
+  padding: var(--space-sm) 0;
+}
+
+.description {
+  border-bottom: 1px solid var(--gray-200);
+  padding: 0 0 var(--space-sm);
+}

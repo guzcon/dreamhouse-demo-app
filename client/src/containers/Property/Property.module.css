@@ -16,18 +16,6 @@
   max-width: 100%;
 }
 
-.content_row {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--gray-200);
-  padding: var(--space-sm) 0;
-}
-
-.description {
-  border-bottom: 1px solid var(--gray-200);
-  padding: 0 0 var(--space-sm);
-}
-
 @media (min-width: 1200px) {
   .property_container {
     display: flex;

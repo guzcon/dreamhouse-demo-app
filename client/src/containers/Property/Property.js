@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Broker from '../../components/Broker/Broker';
 import Spinner from '../../components/Spinner/Spinner';
+import PropertyInfo from '../../components/PropertyInfo/PropertyInfo';
 import styles from './Property.module.css';
 
 class Property extends Component {
@@ -38,42 +39,37 @@ class Property extends Component {
             <Header title={property.title__c}/>
 
             <div className={styles.property_container}>
+
               <div className={styles.property_image_wrap}>
                 <img className={styles.property_image} src={property.picture__c} alt={property.title__c} />
               </div>
-              <div className={styles.content}>
-                <div className={styles.description}>
-                  <p className="text-bold">{property.address__c}</p>
-                  <p className="mb-0">{property.description__c}</p>
-                </div>
-                <div className={styles.content_row}>
-                  <span>Bedrooms: </span>
-                  <span>{property.beds__c}</span>
-                </div>
-                <div className={styles.content_row}>
-                  <span>Bathrooms: </span>
-                  <span>{property.baths__c}</span>
-                </div>
-                <div className={styles.content_row}>
-                  <span>Asking price: </span>
-                  <span>{property.price__c}</span>
-                </div>
 
+              <div className={styles.content}>
+                <PropertyInfo
+                  address={property.address__c}
+                  description={property.description__c}
+                  beds={property.beds__c}
+                  baths={property.baths__c}
+                  price={property.price__c}
+                />
                 <Broker
                   picture={property.broker__c_picture__c}
                   name={property.broker__c_name}
                   title={property.broker__c_title__c}
                   phone={property.broker__c_phone__c}
-                  email={property.broker__c_email__c} />
-                
+                  email={property.broker__c_email__c}
+                />
                 <div className={styles.back_link}><Link to="/">Back to Properties List</Link></div>
               </div>
+
             </div>
           </React.Fragment>
         }
+        
         {!property && isLoading &&
           <div style={{margin: '100px 0', textAlign: 'center'}}><Spinner/></div>
         }
+
         {!property && !isLoading &&
           <React.Fragment>
             <Header title="Property not found."/>
