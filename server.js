@@ -26,9 +26,9 @@ client.connect((err) => {
 
 // API calls
 
-const propertyTable = 'property__c';
-const favoriteTable = 'favorite__c';
-const brokerTable = 'broker__c';
+let propertyTable = 'property__c';
+let favoriteTable = 'favorite__c';
+let brokerTable = 'broker__c';
 
 // setup the demo data if needed
 client.query('SELECT * FROM salesforce.broker__c', function(error, data) {
