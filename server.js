@@ -50,13 +50,13 @@ client.query('SELECT * FROM salesforce.broker__c', function(error, data) {
 });
 
 
-app.get('/property', function(req, res) {
+app.get('/properties', function(req, res) {
   client.query('SELECT * FROM ' + propertyTable, function(error, data) {
     res.send({ payload: data.rows });
   });
 });
 
-app.get('/property/:id', function(req, res) {
+app.get('/properties/:id', function(req, res) {
   client.query('SELECT ' + propertyTable + '.*, ' + brokerTable + '.sfid AS broker__c_sfid, ' + brokerTable + '.name AS broker__c_name, ' + brokerTable + '.email__c AS broker__c_email__c, ' + brokerTable + '.phone__c AS broker__c_phone__c, ' + brokerTable + '.mobile_phone__c AS broker__c_mobile_phone__c, ' + brokerTable + '.title__c AS broker__c_title__c, ' + brokerTable + '.picture__c AS broker__c_picture__c FROM ' + propertyTable + ' INNER JOIN ' + brokerTable + ' ON ' + propertyTable + '.broker__c = ' + brokerTable + '.sfid WHERE ' + propertyTable + '.sfid = $1', [req.params.id], function(error, data) {
     res.json({ payload: data.rows[0] });
   });
