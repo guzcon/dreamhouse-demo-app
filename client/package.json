@@ -25,5 +25,11 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
   ]
 }

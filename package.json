@@ -15,5 +15,11 @@
   },
   "devDependencies": {
     "concurrently": "^4.0.1"
-  }
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ]
 }
