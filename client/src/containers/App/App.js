@@ -42,7 +42,6 @@ class App extends Component {
         <Header title="Properties" />
         <PropertyList
           list={list}
-          loadProperties={this.loadProperties}
           hasNextPage={apiCounter < 100 ? true : false}
           isNextPageLoading={isNextPageLoading}
           loadNextPage={this.loadNextPage}
